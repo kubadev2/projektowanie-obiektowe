@@ -10,7 +10,7 @@ public class Animal {
     private static final Double DEFAULT_DISTANCE = 1.0;
     private static final Double DEFAULT_RUN_LOOSE = 1.5;
     private static final Boolean DEFAULT_IFRUN = false;
-    final String species;
+    String species;
     Boolean isAlive;
     String name;
 
@@ -35,6 +35,10 @@ public class Animal {
         }
     }
 
+    public Animal() {
+    }
+
+
     public void feed() {
         if (this.isAlive) {
             this.weight += 1.0;
@@ -58,7 +62,7 @@ public class Animal {
             else
                 this.weight -= DEFAULT_WEIGHT_LOOSE * distance;
             System.out.println("Masa zmniejszona");
-            System.out.println("uukkuygit667irtu76r");
+            System.out.println(this.weight);
             if (this.weight <= 0) {
                 this.isAlive = false;
                 System.out.println("Zwierze nie zyje");

@@ -1,9 +1,29 @@
 package zad5;
+import java.util.ArrayList;
+import java.util.List;
+import java.net.URL;
 
 public class Main
 {
     public static void main(String[] args)
     {
+        Phone nokia = new Phone();
+        List<String> apps = new ArrayList<>();
+        apps.add("fb");
+        apps.add("gta");
+        apps.add("youtube");
+        nokia.installAnApp(apps);
+        System.out.println(nokia);
+        try
+        {
+            URL url = new URL("https", "appserver.com", "whatsapp");
+            nokia.installAnApp(url);
+        }catch(Exception e)
+        {
+            //to się wykona jeśli będzie błąd
+            System.out.println("Sory ale nie udało się zainstalować");
+        }
+
         Car car1 = new Car("Audi", "TT", "1.8T", 20000.0);
         Car car2 = new Car("Ferrari", "Testarossa", "5", 1000000.0);
 
@@ -29,12 +49,15 @@ public class Main
         me.setCar(car1);
         me.getCar(car1);
 
+        me.feed();
 
         Animal dog = new Animal("canis");
         me.pet = dog;
 
+
+
         dog.feed();
-        dog.walk();
+        dog.walk(10.00, true);
         dog.walk();
         dog.walk();
         dog.walk();

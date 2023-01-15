@@ -1,6 +1,6 @@
 package zad5;
 
-public class Human
+public class Human extends Animal
 {
     Animal pet;
     String firstName;
@@ -10,7 +10,14 @@ public class Human
     final Integer yearOfBirth;
     Human(Integer yearOfBirth)
     {
+
+
         this.yearOfBirth = yearOfBirth;
+    }
+
+    public void feed()
+    {
+        System.out.println("jem zupę");
     }
 
     public Void getSalary()
