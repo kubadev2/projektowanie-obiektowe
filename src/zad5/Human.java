@@ -1,5 +1,7 @@
 package zad5;
 
+import zad5.devices.Car;
+
 public class Human extends Animal
 {
     Animal pet;

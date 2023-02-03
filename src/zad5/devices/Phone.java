@@ -1,4 +1,4 @@
-package zad5;
+package zad5.devices;
 
 import java.net.URL;
 import java.util.List;
@@ -7,10 +7,10 @@ public class Phone {
 
     private static final String DEFAULT_SERVER_ADDRESS = "https://kacper.appserver";
     private static final String DEFAULT_APP_VERSION = "latest_stable";
-    void installAnApp(URL appName)
-    {
-       this.installAnApp(appName, DEFAULT_APP_VERSION);
-    }
+    //void installAnApp(URL appName)
+    //{
+     //  this.installAnApp(appName, DEFAULT_APP_VERSION);
+    //}
     void installAnApp(String appName, String version)
     {
         this.installAnApp(appName, version, DEFAULT_SERVER_ADDRESS);
@@ -28,7 +28,7 @@ public class Phone {
    {
         for (String appName : appNames)
         {
-           this.installAnApp(appName);
+          // this.installAnApp(appName);
         }
    }
 }
