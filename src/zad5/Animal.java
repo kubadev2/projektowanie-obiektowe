@@ -71,4 +71,8 @@ public class Animal {
             System.out.println("Daj spokoj, zwierze nie zyje");
     }
 
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+
+    }
 }
