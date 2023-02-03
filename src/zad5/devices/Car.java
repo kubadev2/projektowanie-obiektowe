@@ -5,15 +5,16 @@ public class Car extends Device {
     public String color;
     public String engine;
     public Double value;
+    public Boolean isWork=false;
 
-    public Car(String model, String producer, int yearOfProduction) {
+    public Car(String producer, String model, int yearOfProduction) {
         super(model, producer, yearOfProduction);
     }
 
 
     @Override
     public void turnOn() {
-
+        this.isWork = true;
     }
 
 

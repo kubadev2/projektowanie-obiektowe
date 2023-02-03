@@ -1,5 +1,6 @@
 package zad5;
 
+import zad5.creatures.Animal;
 import zad5.devices.Car;
 import zad5.devices.Phone;
 
@@ -24,10 +25,7 @@ public class Main {
             System.out.println("Sory ale nie udało się zainstalować");
         }
 
-        Car car1 = new Car("Audi", "TT", "1.8T", 20000.0);
-        Car car2 = new Car("Ferrari", "Testarossa", "5", 1000000.0);
-        Car car3 = new Car("Ferrari", "Testarossa", "5", 1000000.0);
-
+        Car car1 = new Car("Audi", "TT",1991);
         car1.color = "black";
         car2.color = "red";
         car3.color = "red";
@@ -54,7 +52,12 @@ public class Main {
         System.out.println(car2.engine);
         System.out.println(car2.color + "\n");
 
-        Human me = new Human(2001);
+        Human me = new Human(2001) {
+            @Override
+            public void feed(Double foodWeight) {
+
+            }
+        };
         me.setSalary(8000.0);
         me.getSalary();
         me.setCar(car1);
@@ -62,7 +65,12 @@ public class Main {
 
         me.feed();
 
-        Animal dog = new Animal("canis");
+        Animal dog = new Animal("canis") {
+            @Override
+            public void feed(Double foodWeight) {
+
+            }
+        };
         me.pet = dog;
 
 
@@ -86,5 +94,18 @@ public class Main {
         dog.walk();
         dog.walk();
         dog.feed();
+
+        System.out.println();
+
+        Phone phone1 = new Phone("Samsung", "S3", 2005);
+        phone1.turnOn();
+
+        System.out.println();
+
+        car1.turnOn();
+        System.out.println("Czy samochód " + car1.producer + " jest włączony?");
+        System.out.println(car1.isWork);
+        System.out.println("Czy samochód " + car2.producer + " jest włączony?");
+        System.out.println(car2.isWork);
     }
 }

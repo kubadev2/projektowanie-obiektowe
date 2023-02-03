@@ -1,8 +1,9 @@
 package zad5;
 
+import zad5.creatures.Animal;
 import zad5.devices.Car;
 
-public class Human extends Animal
+public abstract class Human extends Animal
 {
     Animal pet;
     String firstName;

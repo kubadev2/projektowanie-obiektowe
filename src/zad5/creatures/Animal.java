@@ -1,4 +1,4 @@
-package zad5;
+package zad5.creatures;
 
 public class Animal {
     private Double weight;
@@ -9,9 +9,9 @@ public class Animal {
     private static final Double DEFAULT_WEIGHT_LOOSE = 1.0;
     private static final Double DEFAULT_DISTANCE = 1.0;
     private static final Double DEFAULT_RUN_LOOSE = 1.5;
-    private static final Boolean DEFAULT_IFRUN = false;
+    private static final boolean DEFAULT_IFRUN = false;
     String species;
-    Boolean isAlive;
+    boolean isAlive;
     String name;
 
     public Animal(String species) {

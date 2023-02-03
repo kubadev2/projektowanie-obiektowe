@@ -7,6 +7,7 @@ public class Phone extends Device {
 
     private static final String DEFAULT_SERVER_ADDRESS = "https://kacper.appserver";
     private static final String DEFAULT_APP_VERSION = "latest_stable";
+    private static Boolean isOn = false;
 
     public Phone(String model, String producer, int yearOfProduction) {
         super(model, producer, yearOfProduction);
@@ -31,7 +32,9 @@ public class Phone extends Device {
     }
     @Override
     public void turnOn() {
-
+        this.isOn=true;
+        System.out.println("Włączam telefon");
+        System.out.println("Jest włączony");
     }
    void installAnApp(List<String> appNames)
    {
