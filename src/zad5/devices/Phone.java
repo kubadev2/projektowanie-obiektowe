@@ -3,10 +3,15 @@ package zad5.devices;
 import java.net.URL;
 import java.util.List;
 
-public class Phone {
+public class Phone extends Device {
 
     private static final String DEFAULT_SERVER_ADDRESS = "https://kacper.appserver";
     private static final String DEFAULT_APP_VERSION = "latest_stable";
+
+    public Phone(String model, String producer, int yearOfProduction) {
+        super(model, producer, yearOfProduction);
+    }
+
     //void installAnApp(URL appName)
     //{
      //  this.installAnApp(appName, DEFAULT_APP_VERSION);
@@ -23,6 +28,10 @@ public class Phone {
         System.out.println("sprawdzam płatność");
         System.out.println("sprawdzam miejsce");
         System.out.println("instaluje");
+    }
+    @Override
+    public void turnOn() {
+
     }
    void installAnApp(List<String> appNames)
    {

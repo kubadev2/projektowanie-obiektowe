@@ -1,20 +1,21 @@
 package zad5.devices;
 
-public class Car
-{
-    public final String model;
-    public final String producer;
+public class Car extends Device {
+
     public String color;
     public String engine;
     public Double value;
 
-    public Car(String producer, String model, String engine, Double value)
-    {
-        this.producer=producer;
-        this.model=model;
-        this.engine=engine;
-        this.value=value;
+    public Car(String model, String producer, int yearOfProduction) {
+        super(model, producer, yearOfProduction);
     }
+
+
+    @Override
+    public void turnOn() {
+
+    }
+
 
     @Override
     public boolean equals(Object obj) {
