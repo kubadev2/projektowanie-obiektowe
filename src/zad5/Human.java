@@ -2,19 +2,19 @@ package zad5;
 
 import zad5.creatures.Animal;
 import zad5.devices.Car;
+import zad5.devices.Phone;
 
 public abstract class Human extends Animal
 {
     Animal pet;
     String firstName;
     String lastName;
-    private Car car;
+    public Phone phone;
+    public Car car;
     private Double salary;
     final Integer yearOfBirth;
     Human(Integer yearOfBirth)
     {
-
-
         this.yearOfBirth = yearOfBirth;
     }
 
@@ -29,7 +29,7 @@ public abstract class Human extends Animal
         return null;
     }
 
-    public String setSalary(double salary)
+    public String setSalary(Double salary)
     {
         if (salary>=0)
         {
@@ -45,24 +45,29 @@ public abstract class Human extends Animal
             System.out.println("Watrosc wynagrodzenia nie moze byc mniejsz niz 0!");
         return null;
     }
-    public String getCar(Car car1)
+    public Car getCar()
     {
-        return (this.car.toString());
+        return car;
     }
-    public Void setCar(Car car)
+    public void setCar(Car car)
     {
-        if(this.salary > car.value)
-        {
-            System.out.println("Udalo ci sie kupic samochod za gotowke");
-            this.car = car;
-        }
-        else if (this.salary > car.value/12)
-        {
-            System.out.println("Udalo ci sie kupic samochod na kredyt");
-            this.car = car;
-        }
-        else
-            System.out.println("Nie stac cie na samochod");
-        return null;
+        this.car = car;
     }
+    public Animal getAnimal()
+    {
+        return pet;
+    }
+    public  void setAnimal(Animal animal){
+
+        this.pet= animal;
+    }
+    public Phone getPhone()
+    {
+        return phone;
+    }
+    public  void setPhone(Phone phone)
+    {
+        this.phone = phone;
+    }
+
 }

@@ -9,13 +9,30 @@ public class Animal {
     private static final Double DEFAULT_WEIGHT_LOOSE = 1.0;
     private static final Double DEFAULT_DISTANCE = 1.0;
     private static final Double DEFAULT_RUN_LOOSE = 1.5;
-    private static final boolean DEFAULT_IFRUN = false;
-    String species;
+    private static boolean DEFAULT_IFRUN = false;
+    public String species;
     boolean isAlive;
     String name;
 
-    public Animal(String species) {
+    public double value;
+
+    public void sell(Human seller, Human buyer, double price)
+    {
+        if(seller.getAnimal() == this && buyer.cash >= price) {
+            System.out.println("Transakcja przebiegła pomyślnie");
+            buyer.setAnimal(this);
+            seller.setAnimal(null);
+            seller.cash += price;
+            buyer.cash -= price;
+            System.out.println("Stary zwierzak znudził mi się to go oczywiście wyrzuciłem :)");
+        }
+        else
+            System.out.println("Nie można przeprowadzić transakcji");
+    }
+
+    public Animal(String species, double value) {
         this.species = species;
+        this.value = value;
         this.isAlive = true;
         this.name = "Szarik";
 

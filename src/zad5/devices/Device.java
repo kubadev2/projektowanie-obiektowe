@@ -5,6 +5,10 @@ public abstract class Device {
     public final String model;
     public final String producer;
     public final int yearOfProduction;
+    public Double value;
+
+
+    public abstract void sell(Human seller, Human buyer, double price);
 
 
     public abstract void turnOn();

@@ -1,9 +1,11 @@
 package zad5.devices;
 
+import zad5.Human;
+
 import java.net.URL;
 import java.util.List;
 
-public class Phone extends Device {
+public abstract class Phone extends Device {
 
     private static final String DEFAULT_SERVER_ADDRESS = "https://kacper.appserver";
     private static final String DEFAULT_APP_VERSION = "latest_stable";
@@ -43,4 +45,17 @@ public class Phone extends Device {
           // this.installAnApp(appName);
         }
    }
+    public void sell(Human seller, Human buyer, double price)
+    {
+        if(seller.getPhone() == this && buyer.cash >= price) {
+            System.out.println("Transakcja przebiegła pomyślnie");
+            buyer.setPhone(this);
+            seller.setPhone(null);
+            seller.cash += price;
+            buyer.cash -= price;
+            System.out.println("Stary telefon znudził mi się to go oczywiście wyrzuciłem :)");
+        }
+        else
+            System.out.println("Nie można przeprowadzić transakcji");
+    }
 }
